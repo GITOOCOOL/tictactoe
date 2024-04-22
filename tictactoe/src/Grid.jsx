@@ -5,13 +5,37 @@ const Grid = () => {
   
   let turn = "X";
 
+  // win states
 
+  // horizontal :
+  // {1,2,3}
+  // {4,5,6}
+  // {7,8,9}
+
+  // vertical :
+  // {1,4,7}
+  // {2,5,8}
+  // {3,6,9}
+
+  // diagonal :
+  // {1,5,9}
+  // {3,5,7}
+
+  let xClickedCells = [];  // 1, 9, 7,3,2
+  let oClickedCells = [];
 
 
   const handleClick = (e) => {
     e.preventDefault(); 
-    console.log((e.target.id))
-    const clickedCell = document.getElementById(e.target.id)
+
+    // X:1  key: value
+    const clickedCell = document.getElementById(e.target.id);
+
+    console.log("turn : " + turn);
+    turn === "X" ? xClickedCells.push(e.target.id) : oClickedCells.push(e.target.id);
+    console.log("xClickedCells : " + xClickedCells);
+    console.log("oClickedCells : " + oClickedCells);
+
     console.log(clickedCell.classList.contains('X'));
     if(clickedCell.classList.contains('X') || clickedCell.classList.contains('O')) return;
     clickedCell.classList.add(turn);
