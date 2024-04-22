@@ -51,6 +51,7 @@ const Grid = () => {
       return;
     }
     else {
+      console.log("type of : " + typeof(e.target.id));
       turn === "X" ? xClickedCells.push(e.target.id) : oClickedCells.push(e.target.id);
 
       // check winstate array every time
@@ -58,16 +59,23 @@ const Grid = () => {
       // xClickedCells check with win2DArray everytime
       //compare garda sequence matter garnu vayena
 
+      console.log('----fjklsld------');
       win2DArray.map((win1DArray) => {
+        win = false;
         win1DArray.map((value) => {
-          if (value in xClickedCells ){
+          // console.log('----------')
+          // console.log(value);
+          // console.log("type of value : " + typeof(value.toString()));
+          // console.log(xClickedCells.includes(value.toString()));
+          if(xClickedCells.includes(value.toString())){
+            console.log('I am here');
             win = true;
           }
-          else{
-            win = false;
-          }
         })
-      });
+        if(win) {
+          alert("Win");
+        }
+      })
 
       console.log('win ' + win)
 

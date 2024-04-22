@@ -30,3 +30,7 @@ if 2 is in [5,2,1,6] then return true
 
 value = 3
 if 3 is in [5,2,1,6] then return true; false
+
+
+count 1 1 1 = 3
+if coutn =3 actual win
