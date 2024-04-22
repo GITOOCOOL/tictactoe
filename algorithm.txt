@@ -34,3 +34,6 @@ if 3 is in [5,2,1,6] then return true; false
 
 count 1 1 1 = 3
 if coutn =3 actual win
+
+
+one time matra chirnu xa when xClickedCell ma [1,4,6];

@@ -4,6 +4,7 @@ import { useState } from 'react'
 const Grid = () => {
   
   let turn = "X";
+  let count = 0;
 
   // win states
 
@@ -60,27 +61,22 @@ const Grid = () => {
       //compare garda sequence matter garnu vayena
 
       console.log('----fjklsld------');
-      win2DArray.map((win1DArray) => {
-        win = false;
-        win1DArray.map((value) => {
-          // console.log('----------')
-          // console.log(value);
-          // console.log("type of value : " + typeof(value.toString()));
-          // console.log(xClickedCells.includes(value.toString()));
-          if(xClickedCells.includes(value.toString())){
-            console.log('I am here');
-            win = true;
+      if(xClickedCells.length >=3) {
+        win2DArray.map((win1DArray) => {
+          count = 0;
+          win1DArray.map((value) => {
+            if(xClickedCells.includes(value.toString())){
+              console.log('I am here');
+              win = true;
+              count++;
+            }
+          })
+          if(count >= 3) {
+            console.log('!! Win !!');
           }
         })
-        if(win) {
-          alert("Win");
-        }
-      })
 
-      console.log('win ' + win)
-
-      
-
+      }
       // oClickedCells check with winstate array everytime
     }
 
