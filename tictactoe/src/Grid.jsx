@@ -3,12 +3,19 @@ import { useState } from 'react'
 
 const Grid = () => {
   
+  let turn = "X";
+
+
+
 
   const handleClick = (e) => {
     e.preventDefault(); 
     console.log((e.target.id))
     const clickedCell = document.getElementById(e.target.id)
-    clickedCell.classList.add('X')
+    console.log(clickedCell.classList.contains('X'));
+    if(clickedCell.classList.contains('X') || clickedCell.classList.contains('O')) return;
+    clickedCell.classList.add(turn);
+    turn === "X" ? turn="O" : turn="X";
     
   };
 
