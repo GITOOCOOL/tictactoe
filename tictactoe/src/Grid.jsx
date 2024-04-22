@@ -28,41 +28,50 @@ const Grid = () => {
   const handleClick = (e) => {
     e.preventDefault(); 
 
+    let turnDiv = document.getElementById("turn");
+    turnDiv.textContent = "turn: " + turn ;
+
     // X:1  key: value
     const clickedCell = document.getElementById(e.target.id);
 
-    console.log("turn : " + turn);
-    turn === "X" ? xClickedCells.push(e.target.id) : oClickedCells.push(e.target.id);
+    if(clickedCell.classList.contains('X') || clickedCell.classList.contains('O')) {
+      return;
+    }
+    else {
+      turn === "X" ? xClickedCells.push(e.target.id) : oClickedCells.push(e.target.id);
+    }
+
     console.log("xClickedCells : " + xClickedCells);
     console.log("oClickedCells : " + oClickedCells);
-
-    console.log(clickedCell.classList.contains('X'));
-    if(clickedCell.classList.contains('X') || clickedCell.classList.contains('O')) return;
     clickedCell.classList.add(turn);
     turn === "X" ? turn="O" : turn="X";
     
   };
 
   return (
-    <div className='grid'>
-        <div className="row">
-            <div className = "cell" id="1" onClick={handleClick} ></div>
-            <div className={`cell`} id="2" onClick={handleClick} ></div>
-            <div className={`cell`} id="3" onClick={handleClick} ></div>
-            
-        </div>
-        <div className="row">
-            <div className = "cell" id="4" onClick={handleClick} ></div>
-            <div className={`cell`} id="5" onClick={handleClick} ></div>
-            <div className={`cell`} id="6" onClick={handleClick} ></div>
-        </div>
-        <div className="row">
-            <div className = "cell" id="7" onClick={handleClick} ></div>
-            <div className={`cell`} id="8" onClick={handleClick} ></div>
-            <div className={`cell`} id="9" onClick={handleClick} ></div>
-        </div>
+    <>
+      <h2>TicTacToe</h2>
+      <div id="turn"></div>
+      <div className='grid'>
+          <div className="row">
+              <div className = "cell" id="1" onClick={handleClick} ></div>
+              <div className={`cell`} id="2" onClick={handleClick} ></div>
+              <div className={`cell`} id="3" onClick={handleClick} ></div>
+              
+          </div>
+          <div className="row">
+              <div className = "cell" id="4" onClick={handleClick} ></div>
+              <div className={`cell`} id="5" onClick={handleClick} ></div>
+              <div className={`cell`} id="6" onClick={handleClick} ></div>
+          </div>
+          <div className="row">
+              <div className = "cell" id="7" onClick={handleClick} ></div>
+              <div className={`cell`} id="8" onClick={handleClick} ></div>
+              <div className={`cell`} id="9" onClick={handleClick} ></div>
+          </div>
 
-    </div>
+      </div>
+    </>
   )
 }
 
