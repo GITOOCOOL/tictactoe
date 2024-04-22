@@ -1,0 +1,32 @@
+Àlgotrithm
+
+1) Win states 8 ota.
+2) xClickedCells Array
+3) yClickedCells Array
+
+
+4) issue : issue : repetated array added on already clicked button
+
+
+SRS - Software Requirement Specifications
+1) Win Line 
+2) Win progress save to MYSQL database through api
+
+
+3 otai hunu paryo
+aaghadi pachadi jata bata ni match
+includes apply
+loop
+1DArray
+actual ma 2Darray xa
+xClickedCell = [5,2,1,6]
+win1Darray = [1,2,3]
+
+value = 1
+if 1 is in [5,2,1,6] then return true
+
+value = 2
+if 2 is in [5,2,1,6] then return true
+
+value = 3
+if 3 is in [5,2,1,6] then return true; false

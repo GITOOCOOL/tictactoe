@@ -21,12 +21,25 @@ const Grid = () => {
   // {1,5,9}
   // {3,5,7}
 
+  const win2DArray = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    [1,4,7],
+    [2,5,8],
+    [3,6,9],
+    [1,5,9],
+    [3,5,7]
+  ]
+
   let xClickedCells = [];  // 1, 9, 7,3,2
   let oClickedCells = [];
 
 
   const handleClick = (e) => {
     e.preventDefault(); 
+
+    let win = false;
 
     let turnDiv = document.getElementById("turn");
     turnDiv.textContent = "turn: " + turn ;
@@ -39,6 +52,28 @@ const Grid = () => {
     }
     else {
       turn === "X" ? xClickedCells.push(e.target.id) : oClickedCells.push(e.target.id);
+
+      // check winstate array every time
+
+      // xClickedCells check with win2DArray everytime
+      //compare garda sequence matter garnu vayena
+
+      win2DArray.map((win1DArray) => {
+        win1DArray.map((value) => {
+          if (value in xClickedCells ){
+            win = true;
+          }
+          else{
+            win = false;
+          }
+        })
+      });
+
+      console.log('win ' + win)
+
+      
+
+      // oClickedCells check with winstate array everytime
     }
 
     console.log("xClickedCells : " + xClickedCells);
