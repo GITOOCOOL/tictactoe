@@ -60,7 +60,6 @@ const Grid = () => {
       // xClickedCells check with win2DArray everytime
       //compare garda sequence matter garnu vayena
 
-      console.log('----fjklsld------');
       if(xClickedCells.length >=3) {
         win2DArray.map((win1DArray) => {
           count = 0;

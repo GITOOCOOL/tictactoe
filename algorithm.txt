@@ -1,16 +1,19 @@
-Àlgotrithm
+SRS - Software Requirement Specifications:
+1) Win Line 
+2) Win progress save to MYSQL database through api
+3) draw feature
+4) user feature 
+5) after win aarko button thickna dinu vayena. (win <div> pop-up screen button and new game restart option)
+6) turn problem
 
+
+
+Algotrithm:
 1) Win states 8 ota.
 2) xClickedCells Array
 3) yClickedCells Array
 
-
 4) issue : issue : repetated array added on already clicked button
-
-
-SRS - Software Requirement Specifications
-1) Win Line 
-2) Win progress save to MYSQL database through api
 
 
 3 otai hunu paryo
